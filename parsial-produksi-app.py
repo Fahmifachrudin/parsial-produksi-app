@@ -17,8 +17,8 @@ try:
     st.latex(f"\\frac{{\\partial f}}{{\\partial x}} = {sp.latex(fx)}")
     st.latex(f"\\frac{{\\partial f}}{{\\partial y}} = {sp.latex(fy)}")
 
-    x0 = st.number_input("Nilai x₀:", value=1.0)
-    y0 = st.number_input("Nilai y₀:", value=2.0)
+    x0 = st.number_input("Nilai x₀:", value=5.0)
+    y0 = st.number_input("Nilai y₀:", value=4.0)
 
     f_val = f.subs({x: x0, y: y0})
     fx_val = fx.subs({x: x0, y: y0})
@@ -29,8 +29,8 @@ try:
 
     st.subheader("Grafik Permukaan & Bidang Singgung")
 
-    x_vals = np.linspace(x0 - 2, x0 + 2, 50)
-    y_vals = np.linspace(y0 - 2, y0 + 2, 50)
+    x_vals = np.linspace(x0 - 2, x0 + 2, 70)
+    y_vals = np.linspace(y0 - 2, y0 + 2, 70)
     X, Y = np.meshgrid(x_vals, y_vals)
     Z = sp.lambdify((x, y), f, 'numpy')(X, Y)
     Z_tangent = float(f_val) + float(fx_val) * (X - x0) + float(fy_val) * (Y - y0)
