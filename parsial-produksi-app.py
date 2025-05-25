@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 st.title("Aplikasi Turunan Parsial")
 
 x, y = sp.symbols('x y')
-fungsi_str = st.text_input("Masukkan fungsi f(x, y):", "x*2 * y + y*3")
+fungsi_str = st.text_input("Masukkan fungsi f(x, y):", "x*6 * y + y*3")
 
 try:
     f = sp.sympify(fungsi_str)
@@ -37,8 +37,8 @@ try:
 
     fig = plt.figure(figsize=(10, 6))
     ax = fig.add_subplot(111, projection='3d')
-    ax.plot_surface(X, Y, Z, alpha=0.8, cmap='plasma')
-    ax.plot_surface(X, Y, Z_tangent, alpha=0.5, color='red')
+    ax.plot_surface(X, Y, Z, alpha=0.8, cmap='coolwarm')
+    ax.plot_surface(X, Y, Z_tangent, alpha=0.5, color='blue')
     ax.set_title("Permukaan f(x, y) dan bidang singgungnya")
     ax.set_xlabel('x')
     ax.set_ylabel('y')
