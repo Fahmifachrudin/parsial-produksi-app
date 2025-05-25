@@ -43,6 +43,7 @@ try:
     ax.set_xlabel('x')
     ax.set_ylabel('y')
     ax.set_zlabel('z')
+    ax.view_init(elev=30, azim=45)
     st.pyplot(fig)
 
 except Exception as e:
